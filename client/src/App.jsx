@@ -9,6 +9,7 @@ import Single from "./Pages/Single.jsx";
 import AddCar from "./Pages/AddCar.jsx";
 import Revue from "./Pages/Revues.jsx";
 import Horaires from "./Pages/Horaires.jsx";
+import OurCars from "./Pages/OurCars.jsx";
 
 export const proxy = "http://localhost:8800/api";
 
@@ -31,20 +32,24 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Home />,
             },
+                        {
+                path: "/our-cars",
+                element: <OurCars />,
+            },
             {
-                path: "/revues",
+                path: "/reviews",
                 element: <Revue />,
             },
             {
-                path: "/voiture/:id",
+                path: "/cars/:id",
                 element: <Single />,
             },
             {
-                path: "/addCar",
+                path: "/cars/add",
                 element: <AddCar />
             },
             {
-                path: "/horaires",
+                path: "/hours",
                 element: <Horaires />
             },
         ],

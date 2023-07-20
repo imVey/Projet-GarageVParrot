@@ -62,29 +62,20 @@ export default function Revue() {
             {notification && <span>{notification}</span>}
             {isEmployeChecked && revues.map((item) => {
                 return <>
-                    <div key={item.id}>
-                        <h1>
+                    
+<a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" key={item.id}>
+
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">                                                 {item.commentaire}
+                        </h5>
+                                             <h1 className="text-xl font-bold">
                             {item.nom}
                         </h1>
-                        {
-                            isEmployed && <div>
-                                <span onClick={() => handleDelete(item.id)}>
-                                    delete
-                                </span>
-                                {
-                                    item.approuve == 0 && <span onClick={() => handleApprouve(item.id)}>
-                                        approuve
-                                    </span>
-                                }
-                            </div>
-                        }
-                        <p>
-                            {item.commentaire}
-                        </p>
-                        <p>
-                            {item.note}
-                        </p>
-                    </div>
+    
+    <p class="font-normal text-gray-700 dark:text-gray-400">                            {item.note}
+</p>
+</a>
+
+
                 </>
             })
             }

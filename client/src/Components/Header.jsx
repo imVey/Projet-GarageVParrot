@@ -28,10 +28,7 @@ export default function Header() {
     return <>
 
         <nav className="header">
-            <div className="header__logo">
-                LOGO
-            </div>
-            <ul className="header__links">
+            <ul className="header__links mx-auto">
                 {
                     isAdmin && <li className="header__link">
                     <Link to={"/register"} >
@@ -41,27 +38,36 @@ export default function Header() {
                 }
                 {
                     isAdmin && <li className="header__link">
-                    <Link to={"/addCar"} >
+                    <Link to={"/cars/add"} >
                         Ajouter une voiture
                     </Link>
                 </li>
                 }
-                <li className="header__link">
+                <li className="header__link uppercase font-semibold ">
                     <Link to={"/"} >
                         Home
                     </Link>
                 </li>
-                <li className="header__link">
-                    <Link to={"/revues"} >
-                        Revues
+       
+                         <li className="header__link uppercase font-semibold">
+                    <Link to={"/our-cars"} >
+                        Nos voitures
                     </Link>
                 </li>
-                <li className="header__link">
-                    <Link to={"/horaires"} >
+                            <div className="header__logo">
+                <img src="./LOGO.png" alt="" />
+                </div>
+                         <li className="header__link uppercase font-semibold">
+                    <Link to={"/reviews"} >
+                        Avis
+                    </Link>
+                </li>
+                <li className="header__link uppercase font-semibold">
+                    <Link to={"/hours"} >
                         Horaires d'ouverture
                     </Link>
                 </li>
-                <li className="header__link">
+                <li className="header__link uppercase font-semibold">
                     {
                         currentUser ?
                             <span onClick={logout}>Logout</span>
