@@ -48,6 +48,7 @@ export default function Horaires() {
                                     {
                                         item.heure_ouverture
                                     }
+                                    <br></br>
                                     {
                                         item.heure_fermeture
                                     }
