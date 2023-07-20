@@ -11,7 +11,7 @@ Il faut avoir installé MYSQL server dans son post au préalable.
 Installer le projet Garage avec npm
 
 ```bash
-  git clone https://git
+  git clone https://github.com/imVey/Projet-GarageVParrot
   cd api
   npm install 
   cd ../client
