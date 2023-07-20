@@ -5,3 +5,36 @@
     height: 100vh;
     width: 100%;
 } */
+
+.header{
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    color: cornflowerblue;
+}
+
+.header__logo{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.header__links {
+    display: flex;
+    align-items: center;
+}
+
+.header__link {
+    margin: 0 25px;
+}
+
+.header__link.active a{
+    color: cornflowerblue;
+}
+
+@media screen and (max-width: 900px){
+    .header__links{
+        display: none;
+    }
+}
