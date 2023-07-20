@@ -29,25 +29,18 @@ export default function Header() {
 
         <nav className="header">
             <ul className="header__links mx-auto">
-                {
-                    isAdmin && <li className="header__link">
-                    <Link to={"/register"} >
-                        Register
-                    </Link>
-                </li>
-                }
-                {
-                    isAdmin && <li className="header__link">
-                    <Link to={"/cars/add"} >
-                        Ajouter une voiture
-                    </Link>
-                </li>
-                }
                 <li className="header__link uppercase font-semibold ">
                     <Link to={"/"} >
                         Home
                     </Link>
                 </li>
+                {
+                    isAdmin && <li className="header__link uppercase font-semibold">
+                    <Link to={"/cars/add"} >
+                        Ajouter une voiture
+                    </Link>
+                </li>
+                }
        
                          <li className="header__link uppercase font-semibold">
                     <Link to={"/our-cars"} >
@@ -57,6 +50,13 @@ export default function Header() {
                             <div className="header__logo">
                 <img src="./LOGO.png" alt="" />
                 </div>
+                {
+                    isAdmin && <li className="header__link uppercase font-semibold">
+                    <Link to={"/register"} >
+                        Register
+                    </Link>
+                </li>
+                }
                          <li className="header__link uppercase font-semibold">
                     <Link to={"/reviews"} >
                         Avis

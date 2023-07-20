@@ -37,18 +37,18 @@ export default function Horaires() {
             {isAdminCheck && horaires.map((item) => {
                 console.log(item)
                 return <>
-                    <div key={item.id}>
-                        <h1>
-                            {item.jour_semaine}
+                    <div className="flex flex-row flex-wrap gap-5 w-full  justify-center" key={item.id}>
+                        <h1 className="uppercase font-semibold">
+                            {item.jour_semaine} :
                         </h1>
                         {
                             item.heure_ouverture && <div> 
 
-                                <p>
+                                <p className="flex flex-row flex-wrap gap-5 w-full  justify-center">
                                     {
                                         item.heure_ouverture
-                                    }
-                                    <br></br>
+                                    } - 
+                                    
                                     {
                                         item.heure_fermeture
                                     }
