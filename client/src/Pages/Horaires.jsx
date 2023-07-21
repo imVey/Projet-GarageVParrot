@@ -65,7 +65,7 @@ export default function Horaires() {
   };
 
   return (
-    <section className="horaires p-4">
+    <section className="horaires p-4 pb-56">
       <div className="flex">
         <div className="flex-1">
           {isAdminCheck &&

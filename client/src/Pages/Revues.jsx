@@ -56,7 +56,7 @@ export default function Revue() {
 
   return (
     <>
-      <section className="revues">
+      <section className="revues pb-56">
         <AddRevue />
         {notification && <span>{notification}</span>}
         {isEmployeChecked &&

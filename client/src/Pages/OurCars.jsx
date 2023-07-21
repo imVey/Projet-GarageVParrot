@@ -52,8 +52,10 @@ export default function OurCars() {
     
   return (
     <>
-            <div className="search-filters p-2 bg-gray-100 rounded-lg mb-7">
-        <label className="block mb-2 font-bold">Recherche</label>
+           
+      <section className="home flex flex-row flex-wrap gap-5 w-full  justify-center pb-56">
+         <div className="search-filters p-2 bg-gray-100 rounded-lg mb-7 w-10/12">
+        <label className="block mb-2 font-bold text-center">Filtre</label>
         <div className="grid grid-cols-2 gap-4">
           <input
             type="text"
@@ -100,17 +102,16 @@ export default function OurCars() {
         </div>
         <button
           onClick={handleSearch}
-          className="px-4 py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+          className="px-4 py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 self-center flex "
         >
           Rechercher
         </button>
       </div>
-      <section className="home flex flex-row flex-wrap gap-5 w-full  justify-center ">
         {filteredVoitures.map((voiture, i) => (
           <div
             className="max-w-sm overflow-hidden shadow-lg mb-3 rounded-xl cursor-pointer hover:-translate-y-4 ease-in duration-300"
             key={i}
-            onClick={() => navigation(`/voiture/${voiture.id}`)}
+            onClick={() => navigation(`/cars/${voiture.id}`)}
           >
             <img className="w-full h-2/4 object-cover" src={voiture.photo} alt={`${voiture}-${i}`} />
             <div className="px-6 py-4">
