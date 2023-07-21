@@ -38,7 +38,7 @@ export default function Home() {
       <div className="flex flex-col gap-5 w-full mx-auto justify-center items-center">
         <h1 className="text-3xl font-bold text-center">Actualité</h1>
         <div className="flex flex-row gap-5 w-full justify-center items-center">
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
             <a href="#">
               <img className="rounded-t-lg" src="./article1.webp" alt="article1" />
             </a>
@@ -52,7 +52,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
             <a href="#">
               <img className="rounded-t-lg" src="./article2.webp" alt="article2" />
             </a>
@@ -66,7 +66,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
             <a href="#">
               <img className="rounded-t-lg" src="./article3.webp" alt="article3" />
             </a>
@@ -79,7 +79,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
             <a href="#">
               <img className="rounded-t-lg" src="./article4.webp" alt="article4" />
             </a>

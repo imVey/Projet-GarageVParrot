@@ -30,13 +30,14 @@ export default function AddRevue() {
   };
 
   return (
-    <section className="register flex justify-end p-4">
-      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow p-4">
+    <section className="register flex justify-center p-4">
+      <div className="max-w-sm bg-blue-200 border border-gray-200 rounded-lg shadow p-4 mb-56">
+        <h1 className="text-3xl font-bold mb-4 text-blue-500 text-center ">Votre avis</h1>
         <form>
           <input
             required
             type="text"
-            placeholder="nom"
+            placeholder="Nom"
             name="nom"
             onChange={handleChange}
             className="mb-2 w-full p-2 border border-gray-300 rounded-md"
@@ -44,7 +45,7 @@ export default function AddRevue() {
           <input
             required
             type="text"
-            placeholder="commentaire"
+            placeholder="Votre avis"
             name="commentaire"
             onChange={handleChange}
             className="mb-2 w-full p-2 border border-gray-300 rounded-md"
@@ -55,14 +56,14 @@ export default function AddRevue() {
             min={0}
             max={5}
             step={0.25}
-            placeholder="note"
+            placeholder="Note"
             name="note"
             onChange={handleChange}
             className="mb-2 w-full p-2 border border-gray-300 rounded-md"
           />
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-green-600 "
           >
             Envoyé
           </button>

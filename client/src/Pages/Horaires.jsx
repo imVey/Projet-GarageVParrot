@@ -65,9 +65,9 @@ export default function Horaires() {
   };
 
   return (
-    <section className="horaires p-4 pb-56">
+    <section className="horaires py-12 pb-80  bg-white">
       <div className="flex">
-        <div className="flex-1">
+        <div className="flex-1 ml-60">
           {isAdminCheck &&
             horaires.map((item) => {
               console.log(item);
@@ -76,7 +76,7 @@ export default function Horaires() {
                   className="max-w-md bg-white border border-gray-200 rounded-lg shadow p-4 mb-4"
                   key={item.id}
                 >
-                  <h1 className="uppercase font-semibold">{item.jour_semaine} :</h1>
+                  <h1 className="uppercase font-semibold text-center">{item.jour_semaine} :</h1>
                   {item.heure_ouverture && (
                     <div className="flex flex-row flex-wrap gap-5 w-full justify-center">
                       <p>

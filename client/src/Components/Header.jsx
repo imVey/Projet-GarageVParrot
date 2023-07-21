@@ -27,40 +27,40 @@ export default function Header() {
   }, [currentUser]); // Note the curly braces around myFunction!
   return (
     <>
-      <nav className="header">
+      <nav className="header ">
         <ul className="header__links mx-auto">
-          <li className="header__link uppercase font-semibold ">
+          <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300">
             <Link to={"/"}>Home</Link>
           </li>
           {isAdmin && (
-            <li className="header__link uppercase font-semibold">
+            <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300 text-green-600 hover:text-green-500">
               <Link to={"/cars/add"}>Ajouter une voiture</Link>
             </li>
           )}
 
-          <li className="header__link uppercase font-semibold">
+          <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300">
             <Link to={"/our-cars"}>Nos voitures</Link>
           </li>
-          <div className="header__logo">
+          <div className="header__logo hover:-translate-y-2 ease-in duration-300">
           <Link to={"/"}><img src="./LOGO.png" alt="" /></Link>
           </div>
           {isAdmin && (
-            <li className="header__link uppercase font-semibold">
-              <Link to={"/register"}>Register</Link>
+            <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300 text-green-600 hover:text-green-500">
+              <Link to={"/register"}>Ajouter</Link>
             </li>
           )}
 
-          <li className="header__link uppercase font-semibold">
+          <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300">
             <Link to={"/reviews"}>Avis</Link>
           </li>
-          <li className="header__link uppercase font-semibold">
+          <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300">
             <Link to={"/hours"}>Horaires d'ouverture</Link>
           </li>
-          <li className="header__link uppercase font-semibold">
+          <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300 hover:text-red-500">
             {currentUser ? (
-              <span onClick={logout}>Logout</span>
+              <span onClick={logout}>Deconnexion</span>
             ) : (
-              <Link to={"/login"}>Login</Link>
+              <Link to={"/login"}>Connexion</Link>
             )}
           </li>
         </ul>

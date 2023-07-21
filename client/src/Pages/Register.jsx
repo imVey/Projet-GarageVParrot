@@ -46,8 +46,8 @@ export default function Register() {
     <>
       {
         isAdminChecked && <section className="register flex justify-center items-center h-screen">
-          <div className="max-w-md bg-white border border-gray-200 rounded-lg shadow p-4">
-            <h1 className="text-2xl font-semibold mb-4 ">Ajouter un employé</h1>
+          <div className="max-w-md bg-blue-200 border border-gray-200 rounded-lg shadow p-4">
+            <h1 className="text-2xl font-semibold mb-4 text-blue-500 text-center">Ajouter un employé</h1>
             <form>
               <input
                 required

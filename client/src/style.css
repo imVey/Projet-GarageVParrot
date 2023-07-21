@@ -45,8 +45,3 @@ body{
     color: cornflowerblue;
 }
 
-@media screen and (max-width: 900px){
-    .header__links{
-        display: none;
-    }
-}

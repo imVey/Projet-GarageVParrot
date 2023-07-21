@@ -56,12 +56,19 @@ export default function Revue() {
 
   return (
     <>
-      <section className="revues pb-56">
+      <section className="revues py-16 pb-60 flex justify-evenly">
         <AddRevue />
         {notification && <span>{notification}</span>}
-        {isEmployeChecked &&
-          revues.map((item) => {
-            return (
+        {isEmployeChecked && (
+          <div className="bg-blue-200 p-2 rounded-xl"
+            style={{
+              maxHeight: "500px", // Hauteur désirée pour le conteneur scrollable
+              overflowY: "auto", // Activer le défilement vertical
+              marginBottom: "0", // Supprime la marge inférieure
+              color: "cornflowerblue", // ajoute couleur de pseudo
+            }}
+          >
+            {revues.map((item) => (
               <div
                 className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow mb-4"
                 key={item.id}
@@ -70,10 +77,11 @@ export default function Revue() {
                   {item.commentaire}
                 </h5>
                 <h1 className="text-xl font-bold">{item.nom}</h1>
-                <p className="text-sm text-gray-700">{item.note}</p>
+                <p className="text-sm text-gray-700 font-semibold">{item.note}/5</p>
               </div>
-            );
-          })}
+            ))}
+          </div>
+        )}
       </section>
     </>
   );

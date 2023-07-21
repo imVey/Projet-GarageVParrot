@@ -48,9 +48,9 @@ export default function addCar() {
   return (
     <>
       {isAdminChecked && (
-        <section className="register flex justify-center items-center h-screen bg-gray-50">
+        <section className="register flex justify-center items-center min-h-screen bg-gray-50 pb-56">
           <div className="max-w-md bg-white border border-gray-300 rounded-lg shadow p-4">
-            <h2 className="text-2xl font-semibold mb-4">Ajout de voiture</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-center">Ajout de voiture</h2>
             <div className="flex flex-col items-center">
               <input
                 required
