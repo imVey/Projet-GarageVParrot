@@ -85,17 +85,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-          </div>
-          <div className="flex flex-col gap-5 mx-auto justify-center items-center">
-                      <h1 className="text-3xl font-bold text-center">Marques</h1>
-          <div className="flex flex-row gap-5 flex-wrap w-full mx-auto justify-center items-center">
-
-              <img src="./audi.png" alt="" />
-              <img src="./bmw.png" alt="" />
-              <img src="./mercedes.png" alt="" />
-              <img src="./volkswagen.png" alt="" />
-          </div>
-          </div>
+      </div>
+      <div className="flex flex-col gap-5 mx-auto justify-center items-center">
+        <h1 className="text-3xl font-bold text-center">Marques</h1>
+        <div className="flex flex-row gap-5 flex-wrap w-full mx-auto justify-center items-center py-4">
+          <img src="./audi.png" alt="" />
+          <img src="./bmw.png" alt="" />
+          <img src="./mercedes.png" alt="" />
+          <img src="./volkswagen.png" alt="" />
+        </div>
+      </div>
     </section>
   );
 }
