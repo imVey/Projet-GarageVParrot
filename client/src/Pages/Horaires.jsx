@@ -73,7 +73,7 @@ export default function Horaires() {
               console.log(item);
               return (
                 <div
-                  className="max-w-md bg-white border border-gray-200 rounded-lg shadow p-4 mb-4"
+                  className="max-w-md bg-blue-200 border border-gray-200 rounded-lg shadow p-4 mb-4"
                   key={item.id}
                 >
                   <h1 className="uppercase font-semibold text-center">{item.jour_semaine} :</h1>
@@ -90,8 +90,8 @@ export default function Horaires() {
         </div>
 
         <div className="flex-1 float-right">
-          <div className="max-w-md bg-white border border-gray-200 rounded-lg shadow p-4">
-            <h2 className="text-xl font-semibold mb-4">Formulaire de contact</h2>
+          <div className="max-w-md bg-blue-200 border border-gray-200 rounded-lg shadow p-4">
+            <h2 className="text-xl font-semibold mb-4 text-center">Formulaire de contact</h2>
             {isMessageSent && (
               <div className="bg-green-500 text-white p-2 mb-4 rounded">
                 Message envoyé !

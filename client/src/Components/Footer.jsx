@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-2">Liens utiles</h3>
             <ul className="text-gray-600">
-              <li><Link to={"/"} >Home</Link></li>
+              <li><Link to={"/"} >Acceuil</Link></li>
               <li><Link to={"/our-cars"}>Nos voitures</Link></li>
               <li><Link to={"/reviews"}>Avis</Link></li>
               <li><Link to={"/hours"}>Contact</Link></li> 
