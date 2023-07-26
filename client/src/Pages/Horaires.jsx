@@ -17,6 +17,7 @@ export default function Horaires() {
       try {
         const res = await axios.get(`${proxy}/horaires`);
         setHoraires(res.data);
+        console.log(res.data);
       } catch (err) {
         console.log(err);
       }
@@ -157,14 +158,14 @@ export default function Horaires() {
               <div className="flex justify-between">
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-green-500"
                 >
                   Envoyer
                 </button>
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-red-500"
                 >
                   Vider tout
                 </button>

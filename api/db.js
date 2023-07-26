@@ -69,6 +69,9 @@ export const initTables = async () => {
           km VARCHAR(255),
           annee VARCHAR(255),
           prix VARCHAR(255),
+          marque VARCHAR(255),
+          modele VARCHAR(255),
+          carburant VARCHAR(255),
           description VARCHAR(255)
         )
       `);
@@ -177,13 +180,16 @@ export const initData = async () => {
 
   //Insert into voiture
   json.data.voitures.map(async (item, key) => {
-    const voitureQuery = "INSERT INTO voiture(`nom`,`photo`,`km`, `annee`,`prix`,`description`) VALUES (?)";
+    const voitureQuery = "INSERT INTO voiture(`nom`,`photo`,`km`, `annee`,`prix`,`marque`,`modele`,`carburant`,`description`) VALUES (?)";
     const voitureValues = [
       item.nom,
       item.photo,
       item.km,
       item.annee,
       item.prix,
+      item.marque,
+      item.modele,
+      item.carburant,
       item.description
     ]
     try {

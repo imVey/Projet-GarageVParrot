@@ -29,9 +29,9 @@ export default function Login() {
 
     return (
         <>
-            <h1 className="text-2xl font-bold mb-4 text-blue-500 text-center">Connexion</h1>
             <section className="login min-h-screen flex items-center justify-center bg-gray-100">
-                <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <form className="bg-blue-200 border-blue-700 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <h2 className="text-2xl font-semibold mb-4 text-center text-blue-500">Connexion</h2>
                     <input
                         required
                         type="text"

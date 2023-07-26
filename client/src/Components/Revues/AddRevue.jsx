@@ -63,7 +63,7 @@ export default function AddRevue() {
           />
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-green-600 "
+            className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-green-600 "
           >
             Envoyé
           </button>

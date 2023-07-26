@@ -96,6 +96,30 @@ export default function addCar() {
               <input
                 required
                 type="text"
+                placeholder="Marque"
+                name="marque"
+                onChange={handleChange}
+                className="w-full p-2 mb-4 border border-gray-300 rounded"
+              />
+              <input
+                required
+                type="text"
+                placeholder="Modele"
+                name="modele"
+                onChange={handleChange}
+                className="w-full p-2 mb-4 border border-gray-300 rounded"
+              />
+              <input
+                required
+                type="text"
+                placeholder="Carburant"
+                name="carburant"
+                onChange={handleChange}
+                className="w-full p-2 mb-4 border border-gray-300 rounded"
+              />
+              <input
+                required
+                type="text"
                 placeholder="Description"
                 name="description"
                 onChange={handleChange}

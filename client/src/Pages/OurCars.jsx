@@ -102,7 +102,7 @@ export default function OurCars() {
         </div>
         <button
           onClick={handleSearch}
-          className="px-4 py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 self-center flex "
+          className="px-4 py-2 mt-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 self-center flex"
         >
           Rechercher
         </button>
@@ -117,7 +117,7 @@ export default function OurCars() {
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">
                 <Link className="link" to={`/voiture/${voiture.id}`}>
-                  <h1>{voiture.nom}</h1>
+                  <h1 className="capitalize">{voiture.nom}</h1>
                 </Link>
               </div>
               <p className="text-gray-700 text-base">{voiture.description}</p>
@@ -125,13 +125,22 @@ export default function OurCars() {
             <div className="px-6 pt-4 pb-2">
               <ul className="flex flex-col gap-5 mb-5 w-20">
                 <li className="flex gap-3">
-                  Prix: <span>{voiture.prix}</span>
+                  Prix: <span>{voiture.prix}&nbsp;€</span>
                 </li>
                 <li className="flex gap-3">
                   Année: <span>{voiture.annee}</span>
                 </li>
                 <li className="flex gap-3">
-                  Km: <span>{voiture.km}</span>
+                  Km: <span>{voiture.km}&nbsp;Km</span>
+                </li>
+                <li className="flex gap-3">
+                  Marque: <span>{voiture.marque}</span>
+                </li>
+                <li className="flex gap-3">
+                  Modele: <span>{voiture.modele}</span>
+                </li>
+                <li className="flex gap-3">
+                  Carburant: <span>{voiture.carburant}</span>
                 </li>
               </ul>
             </div>

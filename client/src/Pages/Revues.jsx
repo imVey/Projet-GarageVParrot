@@ -21,6 +21,7 @@ export default function Revue() {
         try {
           const res = await axios.get(`${proxy}/revues/all`);
           setRevues(res.data);
+          console.log(res.data);
         } catch (err) {
           console.log(err);
         }
@@ -39,7 +40,7 @@ export default function Revue() {
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(`${proxy}/revues/${id}`);
-      setNotification(res.data);
+      setNotification("Revu supprimé avec succès");
     } catch (err) {
       console.log(err);
     }
@@ -48,7 +49,7 @@ export default function Revue() {
   const handleApprouve = async (id) => {
     try {
       const res = await axios.put(`${proxy}/revues/${id}`);
-      setNotification(res.data);
+      setNotification("Revu ajoutée avec succès");
     } catch (err) {
       console.log(err);
     }
@@ -60,7 +61,8 @@ export default function Revue() {
         <AddRevue />
         {notification && <span>{notification}</span>}
         {isEmployeChecked && (
-          <div className="bg-blue-200 p-2 rounded-xl"
+          <div
+            className="bg-blue-200 p-2 rounded-xl custom-scrollbar"
             style={{
               maxHeight: "500px", // Hauteur désirée pour le conteneur scrollable
               overflowY: "auto", // Activer le défilement vertical
@@ -76,8 +78,23 @@ export default function Revue() {
                 <h5 className="mb-2 text-lg font-bold text-gray-900">
                   {item.commentaire}
                 </h5>
+                {isEmployed && (
+                  <>
+                    {
+                      item.approuve == 0 && <button onClick={()=>{handleApprouve(item.id)}} class="bg-green-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-3xl">
+                      Approve
+                    </button>
+                    }
+
+                    <button onClick={()=>{handleDelete(item.id)}} class="bg-red-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-3xl">
+                      Delete
+                    </button>
+                  </>
+                )}
                 <h1 className="text-xl font-bold">{item.nom}</h1>
-                <p className="text-sm text-gray-700 font-semibold">{item.note}/5</p>
+                <p className="text-sm text-gray-700 font-semibold">
+                  {item.note}/5
+                </p>
               </div>
             ))}
           </div>

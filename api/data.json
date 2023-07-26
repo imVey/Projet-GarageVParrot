@@ -7,7 +7,10 @@
                 "km": "50000",
                 "annee": "2015",
                 "prix": "120000",
-                "description": "Voiture Mercedes-Benz blanche"
+                "marque": "Mercedes",
+                "modele": "AMG",
+                "carburant": "Essence",
+                "description": "Puissance de chez Mercedes"
             },
             {
                 "nom": "porsche",
@@ -15,7 +18,10 @@
                 "km": "25000",
                 "annee": "2016",
                 "prix": "100000",
-                "description": "Berline Porsche noire"
+                "marque": "Porshe",
+                "modele": "Panamera",
+                "carburant": "Diesel",
+                "description": "Berline Porsche"
             },
             {
                 "nom": "audi",
@@ -23,7 +29,10 @@
                 "km": "35000",
                 "annee": "2017",
                 "prix": "90000",
-                "description": "Voiture Audi argentée"
+                "marque": "Audi",
+                "modele": "RS6",
+                "carburant": "Essence",
+                "description": "Allier l'utile à l'agréable"
             },
             {
                 "nom": "bmw",
@@ -31,7 +40,10 @@
                 "km": "40000",
                 "annee": "2018",
                 "prix": "95000",
-                "description": "Voiture BMW bleue"
+                "marque": "BMW",
+                "modele": "M6",
+                "carburant": "Essence",
+                "description": "Puissance et confort"
             },
             {
                 "nom": "volkswagen",
@@ -39,7 +51,10 @@
                 "km": "30000",
                 "annee": "2019",
                 "prix": "80000",
-                "description": "Voiture Volkswagen orange"
+                "marque": "Golf",
+                "modele": "Golf.7",
+                "carburant": "Diesel",
+                "description": "Volkswagen Deutch Technologie"
             },
             {
                 "nom": "ford",
@@ -47,7 +62,10 @@
                 "km": "20000",
                 "annee": "2020",
                 "prix": "75000",
-                "description": "Voiture Ford grise"
+                "marque": "Ford",
+                "modele": "Focus",
+                "carburant": "Diesel",
+                "description": "Ford la robustesse Americaine"
             },
             {
                 "nom": "toyota",
@@ -55,7 +73,10 @@
                 "km": "15000",
                 "annee": "2021",
                 "prix": "70000",
-                "description": "Voiture Toyota rouge"
+                "marque": "Toyota",
+                "modele": "Supra",
+                "carburant": "Essence",
+                "description": "L'antologique Supra stututu"
             }
         ],
         "revues":[

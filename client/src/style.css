@@ -8,6 +8,18 @@ html, body {
   margin: 0;
 }
 
+body::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 6px rgb(2, 127, 230);
+    border-radius: 10px;
+    width: 12px;
+    background-color: rgba(0, 81, 255, 0.301);
+}
+
+body::-webkit-scrollbar-track,::-webkit-scrollbar{
+
+    -webkit-box-shadow: inset 0 0 6px rgb(122, 124, 126);
+    width: 9px;
+}
 .app {
       position: relative;
   min-height: 100vh;
@@ -45,3 +57,22 @@ body{
     color: cornflowerblue;
 }
 
+.custom-scrollbar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.custom-scrollbar::-webkit-scrollbar
+{
+    width: 11px;
+    background-color: #F5F5F5;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb
+{
+    border-radius: 7px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #709fd483;
+}
