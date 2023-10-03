@@ -38,55 +38,55 @@ export default function Home() {
       <div className="flex flex-col gap-5 w-full mx-auto justify-center items-center">
         <h1 className="text-3xl font-bold text-center">Actualité</h1>
         <div className="flex flex-row gap-5 w-full justify-center items-center">
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
+          <div className="max-h-72 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
             <a href="#">
               <img className="rounded-t-lg" src="./article1.webp" alt="article1" />
             </a>
             {/* Ajout de l'attribut onclick pour appeler la fonction de redirection */}
             <div className="p-5" onClick={() => redirectToURL("https://www.automobile-magazine.fr/nouveautes/article/39416-renault-arkana-2023-un-restylage-pour-aller-chercher-le-peugeot-3008")}>
               <a href="#" target="_blank">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Renault Arkana 2023 : un restylage pour aller chercher le
                   Peugeot 3008 ?
                 </h5>
               </a>
             </div>
           </div>
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
+          <div className="max-h-72 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
             <a href="#">
               <img className="rounded-t-lg" src="./article2.webp" alt="article2" />
             </a>
             {/* Ajout de l'attribut onclick pour appeler la fonction de redirection */}
             <div className="p-5" onClick={() => redirectToURL("https://www.automobile-magazine.fr/nouveautes/article/39359-nouveau-look-nouveau-logo-et-enfin-de-lhybride-voici-la-peugeot-208-version-2023")}>
               <a href="#" target="_blank">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Nouveau look, nouveau logo et enfin de l'hybride : voici la
                   Peugeot 208 version 2023
                 </h5>
               </a>
             </div>
           </div>
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
+          <div className="h-72 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
             <a href="#">
               <img className="rounded-t-lg" src="./article3.webp" alt="article3" />
             </a>
             {/* Ajout de l'attribut onclick pour appeler la fonction de redirection */}
             <div className="p-5" onClick={() => redirectToURL("https://www.automobile-magazine.fr/nouveautes/article/39357-mercedes-cle-2023-un-nouveau-coupe-dans-la-gamme-de-letoile")}>
               <a href="#" target="_blank">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Mercedes CLE 2023 : un nouveau coupé dans la gamme de l'Etoile
                 </h5>
               </a>
             </div>
           </div>
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
+          <div className="max-h-72 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:-translate-y-4 ease-in duration-300">
             <a href="#">
               <img className="rounded-t-lg" src="./article4.webp" alt="article4" />
             </a>
             {/* Ajout de l'attribut onclick pour appeler la fonction de redirection */}
             <div className="p-5" onClick={() => redirectToURL("https://www.automobile-magazine.fr/voitures-electriques/article/39465-les-vrais-chiffres-de-consommation-et-dautonomie-du-smart-1-electrique")}>
               <a href="#" target="_blank">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Les vrais chiffres de consommation et d’autonomie du Smart #1
                   électrique
                 </h5>
