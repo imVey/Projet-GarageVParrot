@@ -52,7 +52,7 @@ export default function Register() {
               <input
                 required
                 type="text"
-                placeholder="name"
+                placeholder="Nom"
                 name="name"
                 onChange={handleChange}
                 className="mb-2 w-full p-2 border border-gray-300 rounded-md"
@@ -60,7 +60,7 @@ export default function Register() {
               <input
                 required
                 type="text"
-                placeholder="username"
+                placeholder="Nom d'utilisateur"
                 name="username"
                 onChange={handleChange}
                 className="mb-2 w-full p-2 border border-gray-300 rounded-md"
@@ -68,7 +68,7 @@ export default function Register() {
               <input
                 required
                 type="password"
-                placeholder="password"
+                placeholder="Mot de passe"
                 name="password"
                 onChange={handleChange}
                 className="mb-2 w-full p-2 border border-gray-300 rounded-md"
