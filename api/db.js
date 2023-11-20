@@ -5,10 +5,10 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 export const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
+  host: process.env.HOST,
+  user: process.env.USER,
   password: process.env.DB_KEY,
-  database: "garage"
+  database: process.env.DATABASE,
 })
 
 // Create or check if a table exists in the database
