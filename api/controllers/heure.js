@@ -18,15 +18,15 @@ export const updatehoraires = (req, res) => {
     jwt.verify(token, "admin", (err, userInfo) => {
         if (err) return res.status(403).json("Token is not valid!");
 
-        const revueId = req.params.id;
+        const horaireId = req.params.id;
         const q =
-            "UPDATE revue SET `approuve`=1  WHERE `id` = ?";
+            "UPDATE horaires SET `heure_ouverture`=?, `heure_fermeture`=? WHERE `id` = ? ";
 
-        const values = [revueId];
+        const values = [req.body.heure_ouverture, req.body.heure_fermeture];
 
-        // db.query(q, [values], (err, data) => {
-        //     if (err) return res.status(500).json(err);
-        //     return res.json("revue has been updated.");
-        // });
+    db.query(q, [...values, horaireId, userInfo.id], (err, data) => {
+      if (err) return res.status(500).json(err);
+      return res.json(`horaire with id ${horaireId} has been updated.`);
     });
+  });
 };

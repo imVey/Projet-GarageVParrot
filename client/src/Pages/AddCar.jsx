@@ -1,6 +1,6 @@
 import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContex.jsx";
 
@@ -38,7 +38,7 @@ export default function addCar() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${proxy}/voitures`, inputs);
+      await axios.post(`${API_URL}/voitures`, inputs);
       navigate("/");
     } catch (err) {
       setError(err.response.data);

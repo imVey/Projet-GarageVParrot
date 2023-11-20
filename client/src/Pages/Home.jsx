@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 
 export default function Home() {
 

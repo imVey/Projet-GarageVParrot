@@ -1,77 +1,86 @@
 import { useContext, useEffect, useState } from "react";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 import { AuthContext } from "../context/AuthContex.jsx";
 import axios from "axios";
 
 export default function Horaires() {
   const [horaires, setHoraires] = useState([]);
-  const [isAdminCheck, setisAdminCheck] = useState(false);
-  const [isMessageSent, setIsMessageSent] = useState(false);
-
+  const [isAdminCheck, setIsAdminCheck] = useState(false);
+  const [selected, setSelected] = useState(null);
   const { currentUser, isAdmin } = useContext(AuthContext);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const employe = await isAdmin();
-      setisAdminCheck(true);
+  const [hourForm, setHourForm] = useState({
+    openingHours: "",
+    closedHours: "",
+  });
+
+      const fetchData = async () => {
+      const isAdminRight = await isAdmin();
+      setIsAdminCheck(isAdminRight);
       try {
-        const res = await axios.get(`${proxy}/horaires`);
+        const res = await axios.get(`${API_URL}/horaires`);
         setHoraires(res.data);
         console.log(res.data);
       } catch (err) {
         console.log(err);
       }
     };
+
+  useEffect(() => {
+
     fetchData();
   }, [currentUser]);
 
   const handleApprouve = async (id) => {
     try {
-      const res = await axios.put(`${proxy}/revues/${id}`);
+      const res = await axios.put(`${API_URL}/revues/${id}`);
     } catch (err) {
       console.log(err);
     }
   };
-  // Variables d'état pour le formulaire de contact
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
-  
-  // Fonction pour gérer la soumission du formulaire
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Ici, vous pouvez ajouter du code pour envoyer les données du formulaire à votre backend ou effectuer d'autres actions.
-    // Pour cet exemple, nous allons simplement afficher les données du formulaire dans la console.
-    console.log("Nom :", name);
-    console.log("Email :", email);
-    console.log("Téléphone :", phone);
-    console.log("Message :", message);
-    // Réinitialiser les champs du formulaire après la soumission
-    setName("");
-    setEmail("");
-    setPhone("");
-    setMessage("");
-    // Afficher la notification de message envoyé
-    setIsMessageSent(true);
-    // Masquer la notification après 3 secondes (3000 millisecondes)
-    setTimeout(() => setIsMessageSent(false), 3000);
+
+  const handleChange = (e) => {
+    setHourForm({ ...hourForm, [e.target.name]: e.target.value });
   };
-  // Fonction pour réinitialiser le formulaire
-  const handleReset = () => {
-    setName("");
-    setEmail("");
-    setPhone("");
-    setMessage("");
+
+
+
+  const getHoursByState = (hours) => {
+    console.log(typeof hours.heure_ouverture)
+    if (hours.heure_ouverture == null || hours.heure_fermeture == null) {
+      return "Fermé";
+    } else {
+      return `${hours.heure_ouverture} - ${hours.heure_fermeture}`;
+    }
   };
+
+
+  const onSave = async (horaireId) => {
+    try {
+      const res = await axios.put(`${API_URL}/horaires/${horaireId}`, {
+        heure_ouverture: hourForm.openingHours,
+        heure_fermeture: hourForm.closedHours,
+      });
+
+      if (res.status === 200) {
+        fetchData();
+        setSelected(null);
+        setHourForm({
+          openingHours: "",
+          closedHours: "",
+        })
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 
   return (
     <section className="horaires py-12 pb-80  bg-white">
       <div className="flex">
         <div className="flex-1 ml-60">
-          {isAdminCheck &&
-            horaires.map((item) => {
-              console.log(item);
+          {horaires.map((item) => {
               return (
                 <div
                   className="max-w-md bg-blue-200 border border-gray-200 rounded-lg shadow p-4 mb-4"
@@ -80,98 +89,37 @@ export default function Horaires() {
                   <h1 className="uppercase font-semibold text-center">{item.jour_semaine} :</h1>
                   {item.heure_ouverture && (
                     <div className="flex flex-row flex-wrap gap-5 w-full justify-center">
-                      <p>
-                        {item.heure_ouverture} - {item.heure_fermeture}
-                      </p>
+                      {item.id === selected ?
+                        <div className="flex flex-row gap-4">
+                          <input type="text" name="openingHours" id="" defaultValue={item.heure_ouverture} onChange={handleChange} />
+                          <input type="text" name="closedHours" id="" defaultValue={item.heure_fermeture} onChange={handleChange}/>
+                        </div>:
+                        (
+                          <p>
+                            {getHoursByState(item)}
+                          </p>
+                        )
+                      }
                     </div>
                   )}
+                  <div className="flex flex-row justify-center my-3">
+                            {isAdminCheck && (
+            item.id === selected ?
+            (
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={() => onSave(item.id)}>
+            Sauvegarder
+                </button>
+              )
+              : (
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setSelected(item.id)}>
+            Modifier
+                </button>
+              ))}
+                  </div>
                 </div>
               );
             })}
-        </div>
 
-        <div className="flex-1 float-right">
-          <div className="max-w-md bg-blue-200 border border-gray-200 rounded-lg shadow p-4">
-            <h2 className="text-xl font-semibold mb-4 text-center">Formulaire de contact</h2>
-            {isMessageSent && (
-              <div className="bg-green-500 text-white p-2 mb-4 rounded">
-                Message envoyé !
-              </div>
-            )}
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label htmlFor="name" className="block font-medium text-gray-700">
-                  Nom
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="w-full p-2 border border-gray-300 rounded"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full p-2 border border-gray-300 rounded"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="phone" className="block font-medium text-gray-700">
-                  Numéro de téléphone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  required
-                  className="w-full p-2 border border-gray-300 rounded"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="message" className="block font-medium text-gray-700">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  required
-                  className="w-full p-2 border border-gray-300 rounded resize-none"
-                  rows="4"
-                ></textarea>
-              </div>
-              <div className="flex justify-between">
-                <button
-                  type="submit"
-                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-green-500"
-                >
-                  Envoyer
-                </button>
-                <button
-                  type="button"
-                  onClick={handleReset}
-                  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-red-500"
-                >
-                  Vider tout
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
       </div>
     </section>

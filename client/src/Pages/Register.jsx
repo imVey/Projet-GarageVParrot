@@ -1,6 +1,6 @@
 import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContex.jsx";
 
@@ -36,7 +36,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${proxy}/auth/register`, inputs);
+      await axios.post(`${API_URL}/auth/register`, inputs);
       navigate("/");
     } catch (err) {
       setError(err.response.data);

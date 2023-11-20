@@ -10,8 +10,9 @@ import AddCar from "./Pages/AddCar.jsx";
 import Revue from "./Pages/Revues.jsx";
 import Horaires from "./Pages/Horaires.jsx";
 import OurCars from "./Pages/OurCars.jsx";
+import Contact from "./Pages/Contact.jsx";
 
-export const proxy = "http://localhost:8800/api";
+export const API_URL = "http://localhost:8800/api";
 
 const Layout = () => {
     return (
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
                 path: "/",
                 element: <Home />,
             },
-                        {
+            {
                 path: "/our-cars",
                 element: <OurCars />,
             },
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
                 path: "/hours",
                 element: <Horaires />
             },
+            {
+                path: '/contact',
+                element: <Contact />
+            }
         ],
     },
     {

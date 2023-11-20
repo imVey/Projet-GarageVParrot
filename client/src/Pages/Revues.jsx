@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 import { AuthContext } from "../context/AuthContex.jsx";
 import axios from "axios";
 import AddRevue from "../Components/Revues/AddRevue.jsx";
@@ -19,7 +19,7 @@ export default function Revue() {
       setIsEmployeChecked(true);
       if (employe) {
         try {
-          const res = await axios.get(`${proxy}/revues/all`);
+          const res = await axios.get(`${API_URL}/revues/all`);
           setRevues(res.data);
           console.log(res.data);
         } catch (err) {
@@ -27,7 +27,7 @@ export default function Revue() {
         }
       } else {
         try {
-          const res = await axios.get(`${proxy}/revues`);
+          const res = await axios.get(`${API_URL}/revues`);
           setRevues(res.data);
         } catch (err) {
           console.log(err);
@@ -39,7 +39,7 @@ export default function Revue() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`${proxy}/revues/${id}`);
+      const res = await axios.delete(`${API_URL}/revues/${id}`);
       setNotification("Revu supprimé avec succès");
     } catch (err) {
       console.log(err);
@@ -48,7 +48,7 @@ export default function Revue() {
 
   const handleApprouve = async (id) => {
     try {
-      const res = await axios.put(`${proxy}/revues/${id}`);
+      const res = await axios.put(`${API_URL}/revues/${id}`);
       setNotification("Revu ajoutée avec succès");
     } catch (err) {
       console.log(err);

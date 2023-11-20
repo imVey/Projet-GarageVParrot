@@ -1,6 +1,6 @@
 import { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { proxy } from '../../App.jsx'
+import { API_URL } from '../../App.jsx'
 import axios from "axios";
 
 export default function UpdateCar({ carDetails, voitureId, isAdmin }) {
@@ -36,7 +36,7 @@ export default function UpdateCar({ carDetails, voitureId, isAdmin }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`${proxy}/voitures/${voitureId}`, inputs);
+            await axios.put(`${API_URL}/voitures/${voitureId}`, inputs);
             navigate(0);
         } catch (err) {
             setError(err.response.data);

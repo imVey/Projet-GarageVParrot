@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 
 export default function OurCars() {
   const [voitures, setVoitures] = useState([]);
@@ -18,7 +18,7 @@ export default function OurCars() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${proxy}/voitures`);
+        const res = await axios.get(`${API_URL}/voitures`);
         setVoitures(res.data);
       } catch (err) {
         console.log(err);

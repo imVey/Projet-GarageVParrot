@@ -2,17 +2,17 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContex.jsx";
 import axios from "axios";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 
 export default function Header() {
   const { currentUser, logout } = useContext(AuthContext);
   const [isAdmin, setIsAdmin] = useState(null);
 
-  const myFunction = async () => {
+  const getAdminRight = async () => {
     // run asynchronous tasks here
     if (currentUser) {
       try {
-        const isAdmin = await axios.get(`${proxy}/users/isAdmin`);
+        const isAdmin = await axios.get(`${API_URL}/users/isAdmin`);
         setIsAdmin(isAdmin.data.isAdmin);
       } catch (err) {
         console.log(err);
@@ -23,7 +23,7 @@ export default function Header() {
   };
 
   useEffect(() => {
-    myFunction();
+    getAdminRight();
   }, [currentUser]); // Note the curly braces around myFunction!
   return (
     <>
@@ -72,6 +72,9 @@ export default function Header() {
           </li>
           <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300">
             <Link to={"/hours"}>Horaires d'ouverture</Link>
+          </li>
+          <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300">
+            <Link to={"/contact"}>Contact</Link>
           </li>
           <li className="header__link uppercase font-semibold hover:-translate-y-1 ease-in duration-300">
             {currentUser ? (

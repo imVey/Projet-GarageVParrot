@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 import { AuthContext } from "../context/AuthContex.jsx";
 import UpdateCar from "../Components/Cars/UpdateCar.jsx";
 
@@ -20,7 +20,7 @@ export default function Single() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${proxy}/voitures/${voitureId}`);
+        const res = await axios.get(`${API_URL}/voitures/${voitureId}`);
         setVoiture(res.data);
       } catch (err) {
         console.log(err);
@@ -40,7 +40,7 @@ export default function Single() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${proxy}/voitures/${voitureId}`);
+      await axios.delete(`${API_URL}/voitures/${voitureId}`);
       navigate("/");
     } catch (err) {
       console.log(err);

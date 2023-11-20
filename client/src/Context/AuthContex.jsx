@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { proxy } from "../App.jsx";
+import { API_URL } from "../App.jsx";
 
 export const AuthContext = createContext();
 
@@ -11,22 +11,22 @@ export const AuthContexProvider = ({ children }) => {
     axios.defaults.withCredentials = true;
 
     const login = async (inputs) => {
-        const res = await axios.post(`${proxy}/auth/login`, inputs);
+        const res = await axios.post(`${API_URL}/auth/login`, inputs);
         setCurrentUser(res.data);
     };
 
     const logout = async (inputs) => {
-        await axios.post(`${proxy}/auth/logout`);
+        await axios.post(`${API_URL}/auth/logout`);
         setCurrentUser(null);
     };
 
     const isAdmin = async ()=>{
-        const isAdmin = await axios.get(`${proxy}/users/isAdmin`);
+        const isAdmin = await axios.get(`${API_URL}/users/isAdmin`);
         return isAdmin.data.isAdmin;
     }
 
     const isEmploye = async ()=>{
-        const isEmploye = await axios.get(`${proxy}/users/isEmploye`);
+        const isEmploye = await axios.get(`${API_URL}/users/isEmploye`);
         return isEmploye.data.isEmploye;
     }
 
