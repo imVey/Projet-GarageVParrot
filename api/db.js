@@ -130,7 +130,7 @@ const checkIfExistInTable = (username, table, column) => {
 export const initData = async () => {
   console.log('Injecting data to tables...');
 
-  const salt = bcrypt.genSaltSync(10);
+  const salt = await bcrypt.genSaltSync(10);
 
   // Insert into admin
   const adminHash = bcrypt.hashSync(process.env.ADMIN_PWD, salt);

@@ -11,12 +11,12 @@ export const register = (req, res) => {
 
     //Check existing user in employe
     const q = "SELECT * FROM employe WHERE nom = ? OR username = ?";
-    db.query(q, [req.body.name, req.body.username], (err, data) => {
+    db.query(q, [req.body.name, req.body.username], async(err, data) => {
       if (err) return res.status(500).json(err);
       if (data.length) return res.status(409).json("User already exists!");
 
       //Hash the password and create a user
-      const salt = bcrypt.genSaltSync(10);
+      const salt = await bcrypt.genSaltSync(10);
       const hash = bcrypt.hashSync(req.body.password, salt);
 
       const q = "INSERT INTO employe(`nom`,`username`,`password`) VALUES (?)";
